@@ -1,2 +1,2 @@
 #!/bin/bash
-find -maxdepth 1 -empty -type fd | ls -a
+find . -type f -type d -empty | ls -1 -a -*txt
