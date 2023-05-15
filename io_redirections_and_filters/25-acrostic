@@ -1,2 +1,2 @@
 #!/bin/bash
-head -c -1 | printf '\n'  
+cut -c-1 '\n'  
