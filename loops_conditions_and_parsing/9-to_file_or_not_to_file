@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #To file, or not to file
-school=$(school.txt)
+school=$(basename school)
 if [ -f $school ]; then
 	echo "school file exists"
 	if [ -s $school ]; then
