@@ -9,7 +9,7 @@ do
 	if [[ $i -le 9 ]]
 	then
 		continue
-	elif [[ $i -gt 10 ]]
+	elif [[ $i -gt 9 ]]
 	then
 		break
 	fi
