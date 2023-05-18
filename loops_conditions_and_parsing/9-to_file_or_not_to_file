@@ -3,7 +3,7 @@
 school=$(basename school)
 if [ -f "$school" ]; then
 	echo "school file exists"
-	if [ -s "$schoo"l ]; then
+	if [ -s "$school" ]; then
 		echo "school file is not empty"
 
 			if [ -r "$school" ]; then
