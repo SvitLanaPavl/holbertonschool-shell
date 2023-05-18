@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Using while loop
+i=0
+while [ $i -lt 5 ]; do 
+	echo "Best School"
+	(( i++ ))
+done	
