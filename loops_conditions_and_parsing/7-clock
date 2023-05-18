@@ -4,7 +4,7 @@ hour=0
 minute=1
 echo "Hour: $hour"
 
-while [ $hour -le 11 ]; do
+while [ $hour -le 10 ]; do
        echo $minute
        ((minute++))
        if [ $minute -gt 59 ]; then 
