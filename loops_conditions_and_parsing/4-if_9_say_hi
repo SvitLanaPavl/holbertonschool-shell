@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # while + if 
 i=0
-while [ $i -le 9 ]
+while [ $i -le 8 ]
 do 
-	if [ $i -eq 8 ]; then
-		printf "Best School \n Hi"
-	else
-	echo "Best School"
+	if [ $i -eq 7 ]; then
+		printf "Best School\nHi\n"
 	fi
+echo "Best School"
+	(( i++ ))
 done
