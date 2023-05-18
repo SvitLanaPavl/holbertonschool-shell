@@ -4,7 +4,7 @@ hour=0
 minute=1
 echo "Hour: $hour"
 
-while [ $hour -le 10 ]; do
+while [ $hour -le 11 ]; do
        echo $minute
        ((minute++))
        if [ $minute -gt 59 ]; then 
@@ -12,7 +12,16 @@ while [ $hour -le 10 ]; do
 	       echo "Hour: $hour"
 	       minute=1
 	       
-
        fi
-      
 done
+
+#echo $minute
+#((minute++))
+while [ $minute -le 59 ]; do
+	echo $minute 
+if [ $minute -gt 59 ]; then
+	break
+fi
+minute=$((minute+1))
+done
+
