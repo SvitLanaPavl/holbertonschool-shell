@@ -12,6 +12,10 @@ if [ -f "$school" ]; then
 
 	else
 		echo "school file is empty"
+		if [ -r "$school" ]; then
+                        echo "school is a regular file"
+                fi
+
 	fi
 else 
 	echo "school file does not exist"
