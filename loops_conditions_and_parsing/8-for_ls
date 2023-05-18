@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#For ls
+curr_dir=$(pwd)
+content=$(ls -l "$curr_dir")
+for file in $content; do
+	file_name=${file#*-}
+	echo "$file_name"
+done
