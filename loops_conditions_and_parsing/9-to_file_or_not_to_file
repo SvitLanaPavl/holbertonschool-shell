@@ -23,7 +23,7 @@ school=$(basename school)
 #	echo "school file does not exist"
 #fi
 
-schooDir="$(pwd -P)/school"
+schoolDir="school"
 
 if [ -f "$school" ]; then
 	echo "school file exists"
