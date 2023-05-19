@@ -1,24 +1,52 @@
 #!/usr/bin/env bash
 #To file, or not to file
 school=$(basename school)
+#if [ -f "$school" ]; then
+#	echo "school file exists"
+#	if [ -s "$school" ]; then
+#		echo "school file is not empty"
+#
+#			if [ -r "$school" ]; then
+#			echo "school is a regular file"
+#			else
+#			echo ""
+#			fi
+#
+#		else
+#		echo "school file is empty"
+#			if [ -r "$school" ]; then
+ #                       echo "school is a regular file"
+ #              	fi
+#
+#		fi
+#else 
+#	echo "school file does not exist"
+#fi
+
+schooDir="school"
+
 if [ -f "$school" ]; then
 	echo "school file exists"
 	if [ -s "$school" ]; then
 		echo "school file is not empty"
-
-			if [ -r "$school" ]; then
+		if [-r "$school" ]; then
 			echo "school is a regular file"
-			else
-			echo ""
-			fi
-
-		else
-		echo "school file is empty"
-			if [ -r "$school" ]; then
-                        echo "school is a regular file"
-                	fi
-
 		fi
-else 
+	else
+		echo "school file is empty"
+		if [ -r "$school" ]; then
+		       echo "school is a regular file"
+		fi
+	fi
+elif [ -d "$schoolDir" ]; then
+echo "school file exists"
+	if [ -z "$(ls -A $schoolDir)" ]; then
+	echo "school file is empty"
+	else
+	echo "school file is not empty"
+	fi
+else
 	echo "school file does not exist"
 fi
+
+
