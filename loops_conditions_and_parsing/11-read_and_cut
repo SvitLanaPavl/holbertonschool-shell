@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#read and cut
 while read -r text; do
 	username=$(echo "$text" | cut -d: -f1)
 	userid=$(echo "$text" | cut -d: -f3)
