@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Let's parse Apache logs
+log_detail="/etc/httpd/logs/access_log"
+awk -F"\t" "{print $1 $9}" $log_detail | sort -u
