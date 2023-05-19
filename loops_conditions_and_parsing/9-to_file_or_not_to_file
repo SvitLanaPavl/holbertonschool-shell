@@ -41,9 +41,9 @@ if [ -f "$school" ]; then
 elif [ -d "$schoolDir" ]; then
 echo "school file exists"
 	if [ -z "$(ls -A "$schoolDir")" ]; then
-	echo "school file is empty"
-	else
 	echo "school file is not empty"
+	else
+	echo "school file is empty"
 	fi
 else
 	echo "school file does not exist"
