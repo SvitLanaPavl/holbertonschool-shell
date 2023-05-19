@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+while read -r text; do
+	username=$(echo "$text" | cut -d: -f1)
+	userid=$(echo "$text" | cut -d: -f3)
+	homedir=$(echo "$text" | cut -d -f6)
+	echo "$username $userid $homedir"
+done < /etc/passwd
