@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #writing a bash script displaying PID
-pid=$(echo $$)
+pid=$$
 echo "The PID is $pid"
