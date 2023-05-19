@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #To file, or not to file
-school=$(ln -s school)
+school=$(readlink school)
 if [ -f "$school" ]; then
 	echo "school file exists"
 	if [ -s "$school" ]; then
