@@ -29,7 +29,7 @@ if [ -f "$school" ]; then
 	echo "school file exists"
 	if [ -s "$school" ]; then
 		echo "school file is not empty"
-		if [-r "$school" ]; then
+		if [ -r "$school" ]; then
 			echo "school is a regular file"
 		fi
 	else
@@ -40,7 +40,7 @@ if [ -f "$school" ]; then
 	fi
 elif [ -d "$schoolDir" ]; then
 echo "school file exists"
-	if [ -z "$(ls -A $schoolDir)" ]; then
+	if [ -z "$(ls -A "$schoolDir")" ]; then
 	echo "school file is empty"
 	else
 	echo "school file is not empty"
