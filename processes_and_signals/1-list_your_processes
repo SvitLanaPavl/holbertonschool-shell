@@ -25,5 +25,5 @@
 #	echo "Command: ${process[4]}"
 #	echo "Hierarchy: $(pstree -s "${process[0]}")"
 #done
-process=$(ps -afx)
+process=$(ps axfo pid,euser,egroup,args)
 echo "$process"
