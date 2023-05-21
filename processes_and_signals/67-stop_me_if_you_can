@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Stop the execution of the file
+pkill -f "7-highlander"
