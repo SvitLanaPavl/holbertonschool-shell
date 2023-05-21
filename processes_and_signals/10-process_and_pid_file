@@ -2,8 +2,9 @@
 #Process and PID file
 #trap 'echo "I hate the kill command"' SIGTERM
 trap 'echo "Y U no love me?!' SIGINT
-trap 'echo "I hate the kill command"' SIGTERM
+#trap 'echo "I hate the kill command"' SIGTERM
 trap 'rm /var/run/myscript.pid; exit' SIGQUIT SIGTERM
+trap 'echo "I hate the kill command"' SIGTERM
 pid=$(pgrep -f myscript.sh)
 echo "$pid" > /var/run/myscript.pid
 
