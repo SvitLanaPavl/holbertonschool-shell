@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+bash_PID=$(pgrep -f bash)
+echo "$bash_PID"
