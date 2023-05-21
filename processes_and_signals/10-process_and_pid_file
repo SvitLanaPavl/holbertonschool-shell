@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#Process and PID file
+pid=$(pgrep -f myscript.sh)
+echo "$pid" > /var/run/myscript.pid
+
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done
+
+trap 'echo "I hate the kill command"' SIGTERM
+trap 'echo "Y U no love me?!' SIGINT
+trap 'rm /var/run/myscript.pid; exit' SIGQUIT SIGTERM
