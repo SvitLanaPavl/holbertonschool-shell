@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+#PID along with the word bash
 bash_PID=$(pgrep -f bash)
 echo "$bash_PID"
