@@ -25,5 +25,5 @@
 #	echo "Command: ${process[4]}"
 #	echo "Hierarchy: $(pstree -s "${process[0]}")"
 #done
-process=$(pgrep /bin/bash -efh)
+process=$(ps -a -x -u -f)
 echo "$process"
