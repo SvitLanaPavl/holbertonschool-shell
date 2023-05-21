@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 #Process and PID file
 
+function fileDel() {
+rm /var/run/myscript.pid
+exit
+}
+
 trap 'echo "Y U no love me?!' SIGINT
-trap 'echo "I hate the kill command"' SIGTERM
-#trap 'rm /var/run/myscript.pid; exit' SIGQUIT || SIGTERM
+trap 'echo "I hate the kill command"; fileDel' SIGTERM
+#trap 'rm /var/run/myscript.pid; exit' SIGQUIT SIGTERM
 
 pid=$(pgrep -f myscript.sh)
 echo "$pid" > /var/run/myscript.pid
@@ -13,6 +18,3 @@ while true; do
 	sleep 2
 done
 
-#trap 'echo "I hate the kill command"' SIGTERM
-#trap 'echo "Y U no love me?!' SIGINT
-trap 'rm /var/run/myscript.pid; exit' SIGQUIT SIGTERM
