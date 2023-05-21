@@ -1,29 +1,5 @@
 #!/usr/bin/env bash
 #List your processes
-#processes=$(ps -eaf)
-#process_info=()
-#for process in $processes; do
-#	pid=$(echo "$process" | awk '{print $2}')
-#	name=$(echo "$process" | awk '{print $11}')
-#	state=$(echo "$process" | awk '{print $3}')
-#	owner=$(echo "$process" | awk '{print $10}')
-#	command=$(echo "$process" | awk '{print $12}')
-#process_info+=(
-#"$pid"
-#"$name"
-#"$state"
-#"$owner"
-#"$command"
-#)
-#done
 
-#for process in "${process_info[@]}"; do
-#	echo "PID: ${process[0]}"
-#	echo "Name: ${process[1]}"
-#	echo "State: ${process[2]}"
-#	echo "Owner: ${process[3]}"
-#	echo "Command: ${process[4]}"
-#	echo "Hierarchy: $(pstree -s "${process[0]}")"
-#done
 process=$(ps -a -x -u -f)
 echo "$process"
