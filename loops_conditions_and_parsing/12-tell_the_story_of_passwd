@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 #Tell the story of passwd
-root=$(cut -d: -f1 "$PASSWORD")
-bin=$(cut -d: -f2 "$PASSWORD")
-while IFS=: read -r "$root" "$bin" "$USERNAME" "$USER_ID" "$GROUP_ID" "$PASSWORD" "$HOME" "$SHELL"; do
+#root=$(cut -d: -f1 "/root:bin/bash")
+#bin=$(cut -d: -f2 "/root:bin/bash")
+while IFS=: read -r "{$root}" "{$bin}" "{$USERNAME}" "{$USER_ID}" "{$GROUP_ID}" "{$PASSWORD}" "{$HOME}" "{$SHELL}"; do
+	root=$(cut -d: -f1 "/root:bin/bash")
+	bin=$(cut -d: -f2 "/root:bin/bash")
 	echo "The user $USERNAME is part of the $SHELL gang, lives in $root and rides $bin. $USER_ID's place is protected by the passcode $GROUP_ID, more info about the user here: $USER_ID"
 done < /etc/passwd
 
