@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #Let's parse Apache logs
-log_detail=$(curl -L https://almhuette-raith.at/apache-log/access.log/)
+log_detail=apache-access.log
 awk -F"\t" "{print $1 $9}" "$log_detail" | sort -u
