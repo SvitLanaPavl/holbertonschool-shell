@@ -2,9 +2,23 @@
 #Tell the story of passwd
 #root=$(cut -d: -f1 "/root:bin/bash")
 #bin=$(cut -d: -f2 "/root:bin/bash")
-while IFS=: read -r "{$root}" "{$bin}" "{$USERNAME}" "{$USER_ID}" "{$GROUP_ID}" "{$PASSWORD}" "{$HOME}" "{$SHELL}"; do
-	root=$(cut -d: -f1 "/root:bin/bash")
-	bin=$(cut -d: -f2 "/root:bin/bash")
-	echo "The user $USERNAME is part of the $SHELL gang, lives in $root and rides $bin. $USER_ID's place is protected by the passcode $GROUP_ID, more info about the user here: $USER_ID"
-done < /etc/passwd
+#while IFS=: read -r line; do
+#	root=$(echo "$PASSWORD" | cut -d: -f1 $line)
+#	bin=$(echo "$PASSWORD" | cut -d: -f2 $line)
+#	echo "The user $USERNAME is part of the $SHELL gang, lives in $root and rides $bin. $USER_ID's place is protected by the passcode $GROUP_ID, more info about the user here: $USER_ID"
+#done < /etc/passwd
 
+container="/etc/passwd"
+
+while IFS= read -r line; do
+
+	username=$(echo "$line" | cut -d: -f1)
+	gang=$(echo "$line" | cut -d: -f7)
+	live=$(echo "$line" | cut -d: -f6)
+	ride=$(echo "$line" | cut -d: -f7)
+	place=$(echo "$line" | cut -d: -f3)
+	passcode=$(echo "$line" | cut -d: -f2)
+	info=$(echo "$line" | cut -d: -f5)
+
+echo "The user $username is part of the $gang gang, lives in $live and rides $ride. $place's place is protected by the passcode $passcode, more info about the user here: $info"
+done < $container
