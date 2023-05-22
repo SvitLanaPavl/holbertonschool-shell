@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "Enter the input file: "
+read input_file
+input_file_handler=$(open -a "/bin/cat" "$input_file")
+while IFS= read -r line: do
+	if (( $(($line % 2)) == 0 )); then
+		echo "$line"
+	fi
+done < "$input_file_handler"
+close "$input_file_handler"
