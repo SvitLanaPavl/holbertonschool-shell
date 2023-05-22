@@ -1,0 +1,8 @@
+#!/bin/bash
+# Ecoding and decoding text using ROT13
+echo "Enter the text to encode and decode"
+read -r text
+encoded_text=$(echo "$text" | tr 'A-Za-z' 'N-ZA-Mn-za-m')
+decoded_text=$(echo "$encoded_text" | tr 'A-Za-z' 'N-ZA-Mn-za-m')
+echo "$encoded_text"
+echo "$decoded_text"
