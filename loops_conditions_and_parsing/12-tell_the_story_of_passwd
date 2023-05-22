@@ -13,7 +13,7 @@ container="/etc/passwd"
 while IFS= read -r line; do
 
 	username=$(echo "$line" | cut -d: -f1)
-	gang=$(echo "$line" | cut -d: -f7)
+#	gang=$(echo "$line" | cut -d: -f7)
 	live=$(echo "$line" | cut -d: -f6)
 	ride=$(echo "$line" | cut -d: -f7)
 	place=$(echo "$line" | cut -d: -f3)
